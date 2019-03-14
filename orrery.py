@@ -407,7 +407,7 @@ rjup = 10.864
 rmerc = 0.383
 # for the planet size legend
 solarsys = np.array([rmerc, rearth, rnep, rjup])
-pnames = ['Mercury', 'Earth', 'Neptune', 'Jupiter']
+pnames = ['Merkurius', 'Bumi', 'Neptunus', 'Jupiter']
 csolar = np.array([409, 255, 46, 112])
 
 # keep the smallest planets visible and the largest from being too huge
@@ -442,7 +442,7 @@ prop = fm.FontProperties(fname=fontfile)
 # create the 'Solar System' text identification
 if addsolar:
     loc = np.where(usedkics == kicsolar)[0][0]
-    plt.text(fullxcens[loc], fullycens[loc], 'Solar\nSystem', zorder=-2,
+    plt.text(fullxcens[loc], fullycens[loc], 'Tata\n Surya', zorder=-2,
              color=fontcol, family=fontfam, fontproperties=prop, fontsize=fsz1,
              horizontalalignment='center', verticalalignment='center')
 
@@ -507,10 +507,10 @@ cbar.ax.tick_params(axis='y', which='minor', color=fontcol, width=2,
 cbar.ax.yaxis.set_minor_locator(FL(tmp.norm([255, 409, 730, 1200])))
 cbar.ax.set_yticklabels(labs, color=fontcol, family=fontfam,
                         fontproperties=prop, fontsize=fsz1, zorder=5)
-cbar.ax.set_yticklabels(['Earth', 'Mercury', 'Surface\nof Venus', 'Lava'],
+cbar.ax.set_yticklabels(['Bumi', 'Merkurius', 'Permukaan\nVenus', 'Lava'],
                         minor=True, color=fontcol, family=fontfam,
                         fontproperties=prop, fontsize=fsz1)
-clab = 'Planet Equilibrium\nTemperature (K)'
+clab = 'Temperatur\nKesetimbangan Planet (K)'
 # add the overall label at the bottom of the color bar
 cbar.ax.set_xlabel(clab, color=fontcol, family=fontfam, fontproperties=prop,
                    size=fsz1, zorder=5)
@@ -532,10 +532,6 @@ text = plt.text(1. - txtxoff, 1. - txtyoff1,
                 time0.strftime('Kepler Orrery V\n%d %b %Y'), color=fontcol,
                 family=fontfam, fontproperties=prop,
                 fontsize=fsz2, zorder=5, transform=ax.transAxes)
-plt.text(1. - txtxoff, 1. - txtyoff2, 'By Ethan Kruse\n@ethan_kruse',
-         color=fontcol, family=fontfam,
-         fontproperties=prop, fontsize=fsz1,
-         zorder=5, transform=ax.transAxes)
 
 # the center of the figure
 x0 = np.mean(plt.xlim())
